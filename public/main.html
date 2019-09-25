@@ -2,19 +2,22 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
 
-<a-scene
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+    <a-scene
+            embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+
 
 
     <a-assets>
         <a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartment.obj"></a-asset-item>
-      
+        <a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartment.mtl"></a-asset-item>
 
     </a-assets>
 
     <a-marker preset="hiro">
 
-        <a-entity id="london" rotation="0 0 0 0 0" side="double" position="0 0.5 0"  scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
+        <a-entity id="london" rotation="0 0 0 0 0" side="double" position="0 0.4 0"  scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
 
         </a-entity>
 
@@ -22,5 +25,5 @@
 
 
     <a-entity camera></a-entity>
-
-</a-scene>
+    </a-scene>
+</>
