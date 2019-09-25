@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 app.get('/', function (req, res) {
-    res.sender('index');
+    res.render('index');
 });
 
 app.listen(port);
