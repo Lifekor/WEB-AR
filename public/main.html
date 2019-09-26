@@ -3,27 +3,33 @@
 
 
 
-    <a-scene
-            embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
-
-
+<a-scene
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
     <a-assets>
-        <a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartment.obj"></a-asset-item>
-        <a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartment.mtl"></a-asset-item>
+
 
     </a-assets>
 
     <a-marker preset="hiro">
 
-        <a-entity id="london" rotation="0 0 0 0 0" side="double" position="0 0.4 0"  scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
+        <a-entity scale="0.001 0.001 0.001" gltf-model="https://raw.githubusercontent.com/Lifekor/Home_v3/master/scene.gltf">
+            <a-animation attribute="rotation" to="0 360 0"  dur="20000" easing="linear" repeat="indefinite"   ></a-animation>
+        </a-entity>
+        <a-entity light="intensity:1.14;distance:3.05;decay:3.33;shadowBias:0.2;castShadow:true" position="-0.5 1 0.948" data-aframe-default-light="" aframe-injected="" rotation="24.236114734033823 0 0"></a-entity>
+
 
         </a-entity>
 
     </a-marker>
 
 
-    <a-entity camera></a-entity>
-    </a-scene>
-</>
+    <a-entity Camera></a-entity>
+</a-scene>
+<script>
+    // Workaround for an AR.js bug (https://github.com/jeromeetienne/AR.js/issues/410)
+    const sceneEl = document.querySelector('a-scene');
+    sceneEl.addEventListener('loaded', () => {
+        sceneEl.camera = new THREE.PerspectiveCamera();
+    });
+</script>
