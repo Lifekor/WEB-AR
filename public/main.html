@@ -19,6 +19,8 @@
 	<div class="btn rotate"></div>
 	<div class="btn scale"></div>
 	<div class="btn switch"></div>
+	<div class="btn route"></div>
+
 
 </div>
 
@@ -36,14 +38,16 @@
 
 
 		<a-entity id="london" rotation="0 -90 0" side="double" position="0.0 0.2 0" scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
-			<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
-			</a-animation>
+		<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
+		</a-animation>
+			<a-animation  attribute="rotation" begin="route" end="endRoute" dur="1000" fill="forwards" to="90 0 0"></a-animation>
 		</a-entity>
 
 		<a-entity id="kyiv" visible="false" rotation="0 0 0" side="double" position="0.0 0.1 0" scale="0.1 0.1 0.1" obj-model="obj: #kyiv-obj; mtl: #kyiv-mtl">
 			<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite" >
 			</a-animation>
 		</a-entity>
+
 
 	</a-marker>
 

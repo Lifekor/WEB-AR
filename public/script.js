@@ -2,10 +2,13 @@ console.clear()
 
 var londonModel = document.querySelector('#london'),
 	kyivModel = document.querySelector('#kyiv'),
+	routeModel = document.querySelector('#route')
 	rotateBtn = $(".rotate"),
 	scaleBtn = $(".scale"),
 	switchBtn = $(".switch"),
 	gotitBtn = $(".gotit");
+    routeBtn = $(".route")
+
 
 
 gotitBtn.click(function(){
@@ -24,6 +27,17 @@ rotateBtn.click(function(){
 		londonModel.emit('rotate');
 		kyivModel.emit('rotate');
 		rotateBtn.addClass("rotate_fade");
+	}
+});
+routeBtn.click(function(){
+	if (routeBtn.hasClass("route_fade")){
+		routeModel.emit('endRoute');
+		kyivModel.emit('endRoute');
+		routeBtn.removeClass("route_fade");
+	} else {
+		routeModel.emit('route');
+		kyivModel.emit('route');
+		routeBtn.addClass("route_fade");
 	}
 });
 

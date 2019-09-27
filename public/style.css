@@ -99,3 +99,14 @@ body {
 .links {
   color: #f45;
 }
+.route{
+  background-color: #0029ff;
+  background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_3d_rotation_white_24px.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.route_fade {
+  opacity: 0.4;
+  background-color: #323965;
+}
