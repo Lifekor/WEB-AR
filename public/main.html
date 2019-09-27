@@ -1,7 +1,12 @@
+
+
 <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
-
+<div class="btns-wrap">
+    <div class="btn rotate"></div>
+    <div class="btn scale"></div>
+</div>
 
 <a-scene
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
@@ -16,6 +21,7 @@
     </a-assets>
 
     <a-marker preset="hiro">
+
 
 
         <a-entity id="london" rotation="0 0 0 0 0" side="double" position="0 0.2 0"  scale="0.09 0.09 0.09" obj-model="obj: #london-obj; mtl: #london-mtl">
