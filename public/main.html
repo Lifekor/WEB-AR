@@ -1,40 +1,65 @@
-
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Apartment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui">
+<meta aframe-injected="" name="mobile-web-app-capable" content="yes">
 
 <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
 
+<div class="btns-wrap">
+	<div class="btn rotate"></div>
+	<div class="btn scale"></div>
+	<div class="btn switch"></div>
 
-<a-scene
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+</div>
 
+<a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' >
 
+	<a-assets>
+		<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.obj"></a-asset-item>
+		<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.mtl"></a-asset-item>
+		<a-asset-item id="kyiv-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Logo.obj"></a-asset-item>
+		<a-asset-item id="kyiv-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Logo.mtl"></a-asset-item>
+	</a-assets>
 
-
-    <a-assets>
-        <a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.obj"></a-asset-item>
-        <a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.mtl"></a-asset-item>
-
-    </a-assets>
-
-    <a-marker preset="hiro">
-
-
-
-        <a-entity id="london" rotation="0 0 0 0 0" side="double" position="0 0.2 0"  scale="0.09 0.09 0.09" obj-model="obj: #london-obj; mtl: #london-mtl">
-
-
-        </a-entity>
-
-    </a-marker>
+	<a-marker preset="hiro" id="aframe-scene">
 
 
-    <a-entity camera></a-entity>
+
+		<a-entity id="london" rotation="0 -90 0" side="double" position="0.0 0.2 0" scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
+			<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
+			</a-animation>
+		</a-entity>
+
+		<a-entity id="kyiv" visible="false" rotation="0 0 0" side="double" position="0.0 0.1 0" scale="0.1 0.1 0.1" obj-model="obj: #kyiv-obj; mtl: #kyiv-mtl">
+			<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite" >
+			</a-animation>
+		</a-entity>
+
+	</a-marker>
+
+	<a-entity camera></a-entity>
+
 </a-scene>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script  src="./script.js"></script>
+
 <script>
-    // Workaround for an AR.js bug (https://github.com/jeromeetienne/AR.js/issues/410)
-    const sceneEl = document.querySelector('a-scene');
-    sceneEl.addEventListener('loaded', () => {
-        sceneEl.camera = new THREE.PerspectiveCamera();
-    });
+	// Workaround for an AR.js bug (https://github.com/jeromeetienne/AR.js/issues/410)
+	const sceneEl = document.querySelector('a-scene');
+	sceneEl.addEventListener('loaded', () => {
+		sceneEl.camera = new THREE.PerspectiveCamera();
+	});
 </script>
+</body>
+</html>

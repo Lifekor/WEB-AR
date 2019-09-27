@@ -1,11 +1,11 @@
 console.clear()
 
 var londonModel = document.querySelector('#london'),
-		kyivModel = document.querySelector('#kyiv'),
-		rotateBtn = $(".rotate"),
-		scaleBtn = $(".scale"),
-		switchBtn = $(".switch"),
-		gotitBtn = $(".gotit"); 
+	kyivModel = document.querySelector('#kyiv'),
+	rotateBtn = $(".rotate"),
+	scaleBtn = $(".scale"),
+	switchBtn = $(".switch"),
+	gotitBtn = $(".gotit");
 
 
 gotitBtn.click(function(){
@@ -13,7 +13,6 @@ gotitBtn.click(function(){
 		display: "none"
 	});
 });
-
 
 
 rotateBtn.click(function(){
@@ -29,24 +28,24 @@ rotateBtn.click(function(){
 });
 
 var scaleFlag = 0,
-		kyivFlag = false;
+	kyivFlag = false;
 
 scaleBtn.click(function(){
 	if (scaleFlag == 0){
 		scaleFlag = 1;
-		londonModel.setAttribute("scale", scale="0.33 0.33 0.33");
-		kyivModel.setAttribute("scale", scale="0.55 0.55 0.55");
+		londonModel.setAttribute("scale", scale="0.2 0.2 0.2");
+		kyivModel.setAttribute("scale", scale="0.2 0.2 0.2");
 		scaleBtn.addClass("scale_one");
 	} else if (scaleFlag == 1) {
 		scaleFlag = 2;
-		londonModel.setAttribute("scale", scale="0.4 0.4 0.4");
-		kyivModel.setAttribute("scale", scale="0.7 0.7 0.7");
+		londonModel.setAttribute("scale", scale="0.3 0.3 0.3");
+		kyivModel.setAttribute("scale", scale="0.3 0.3 0.3");
 		scaleBtn.addClass("scale_two");
 		scaleBtn.removeClass("scale_one");
 	} else if (scaleFlag == 2) {
 		scaleFlag = 0;
-		londonModel.setAttribute("scale", scale="0.2 0.2 0.2");
-		kyivModel.setAttribute("scale", scale="0.4 0.4 0.4");
+		londonModel.setAttribute("scale", scale="0.1 0.1 0.1");
+		kyivModel.setAttribute("scale", scale="0.1 0.1 0.1");
 		scaleBtn.removeClass("scale_two");
 	}
 });
@@ -54,12 +53,12 @@ scaleBtn.click(function(){
 switchBtn.click(function(){
 	if (kyivFlag == false){
 		kyivFlag = true;
-		switchBtn.html("London");
+		switchBtn.html("Apartment");
 		londonModel.setAttribute("visible", false);
 		kyivModel.setAttribute("visible", true);
 	} else {
 		kyivFlag = false
-		switchBtn.html("Kyiv");
+		switchBtn.html("Logo");
 		londonModel.setAttribute("visible", true);
 		kyivModel.setAttribute("visible", false);
 	}
