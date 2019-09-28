@@ -31,9 +31,9 @@ body {
   transition: all 0.2s;
 }
 .rotate {
-  background-color: #0078ff;
-  background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_3d_rotation_white_24px.svg");
-  background-size: 60%;
+  background-color: #ffffff;
+  background-image: url("https://image.flaticon.com/icons/svg/149/149676.svg");
+  background-size: 102%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -101,7 +101,7 @@ body {
 }
 .route {
   background-color: #ffffff;
-  background-image: url("https://image.flaticon.com/icons/svg/149/149676.svg");
+  background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_3d_rotation_white_24px.svg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;

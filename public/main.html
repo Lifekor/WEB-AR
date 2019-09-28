@@ -17,7 +17,6 @@
 
 <div class="btns-wrap">
 	<div class="btn rotate"></div>
-	<div class="btn route"></div>
 	<div class="btn scale"></div>
 	<div class="btn switch"></div>
 
@@ -30,8 +29,8 @@
 <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' >
 
 	<a-assets>
-		<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.obj"></a-asset-item>
-		<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartap.mtl"></a-asset-item>
+		<a-asset-item id="london-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartments.obj"></a-asset-item>
+		<a-asset-item id="london-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Apartments.mtl"></a-asset-item>
 		<a-asset-item id="kyiv-obj" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Logo.obj"></a-asset-item>
 		<a-asset-item id="kyiv-mtl" src="https://raw.githubusercontent.com/Lifekor/Home_v3/master/Logo.mtl"></a-asset-item>
 	</a-assets>
@@ -46,8 +45,7 @@
 			</a-animation>
 			<a-animation attribute="rotation" begin="return" end="endRotate"  dur="260" fill="forwards" to="0 180 0"  easing="linear">
 			</a-animation>
-			<a-animation  attribute="rotation" begin="route" end="endRoute" dur="7000" fill="forwards" to="0 -180 0" easing="linear">
-			</a-animation>
+
 
 		</a-entity>
 
