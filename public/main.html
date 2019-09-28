@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Apartment</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -17,9 +17,12 @@
 
 <div class="btns-wrap">
 	<div class="btn rotate"></div>
+	<div class="btn route"></div>
 	<div class="btn scale"></div>
 	<div class="btn switch"></div>
-	<div class="btn route"></div>
+
+
+
 
 
 </div>
@@ -37,10 +40,15 @@
 
 
 
-		<a-entity id="london" rotation="0 -90 0" side="double" position="0.0 0.2 0" scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
-		<a-animation attribute="rotation" begin="rotate" end="endRotate" dur="26000" fill="forwards" to="0 270 0" repeat="indefinite" easing="linear">
-		</a-animation>
-			<a-animation  attribute="rotation" begin="route" end="endRoute" dur="1000" fill="forwards" to="90 0 0"></a-animation>
+
+		<a-entity id="london" rotation="0 180 0" side="double" position="0.0 0.3 0" scale="0.1 0.1 0.1" obj-model="obj: #london-obj; mtl: #london-mtl">
+			<a-animation attribute="rotation" begin="rotate" end="endRotate"  dur="260" fill="forwards" to="90 180 0"  easing="linear">
+			</a-animation>
+			<a-animation attribute="rotation" begin="return" end="endRotate"  dur="260" fill="forwards" to="0 180 0"  easing="linear">
+			</a-animation>
+			<a-animation  attribute="rotation" begin="route" end="endRoute" dur="7000" fill="forwards" to="0 -180 0" easing="linear">
+			</a-animation>
+
 		</a-entity>
 
 		<a-entity id="kyiv" visible="false" rotation="0 0 0" side="double" position="0.0 0.1 0" scale="0.1 0.1 0.1" obj-model="obj: #kyiv-obj; mtl: #kyiv-mtl">
@@ -56,7 +64,8 @@
 </a-scene>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script  src="./script.js"></script>
+
+<script  src="./js/script.js"></script>
 
 <script>
 	// Workaround for an AR.js bug (https://github.com/jeromeetienne/AR.js/issues/410)

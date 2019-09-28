@@ -2,7 +2,6 @@ console.clear()
 
 var londonModel = document.querySelector('#london'),
 	kyivModel = document.querySelector('#kyiv'),
-	routeModel = document.querySelector('#route')
 	rotateBtn = $(".rotate"),
 	scaleBtn = $(".scale"),
 	switchBtn = $(".switch"),
@@ -17,27 +16,21 @@ gotitBtn.click(function(){
 	});
 });
 
-
-rotateBtn.click(function(){
-	if (rotateBtn.hasClass("rotate_fade")){
-		londonModel.emit('endRotate');
-		kyivModel.emit('endRotate');
-		rotateBtn.removeClass("rotate_fade");
+routeBtn.click(function(){
+	rotateBtn.toggleClass("rotated");
+	if (rotateBtn.hasClass("rotated")){
+		londonModel.emit('route');
 	} else {
-		londonModel.emit('rotate');
-		kyivModel.emit('rotate');
-		rotateBtn.addClass("rotate_fade");
+		londonModel.emit('return');
 	}
 });
-routeBtn.click(function(){
-	if (routeBtn.hasClass("route_fade")){
-		routeModel.emit('endRoute');
-		kyivModel.emit('endRoute');
-		routeBtn.removeClass("route_fade");
+
+rotateBtn.click(function(){
+	rotateBtn.toggleClass("rotated");
+	if (rotateBtn.hasClass("rotated")){
+		londonModel.emit('rotate');
 	} else {
-		routeModel.emit('route');
-		kyivModel.emit('route');
-		routeBtn.addClass("route_fade");
+		londonModel.emit('return');
 	}
 });
 
